@@ -15,12 +15,18 @@ from pynput.keyboard import Key, Controller
 # This is wrriten by me on top of 'mediapipe', Makes our work easy
 from modules import HandDetector as hd
 
-# TODO: Reading json file and extract path from it.
+# ==================== Reading json file ====================
+# Opening json file
+config = open('config.json')
+
+# Reading json file
+data = json.load(config)
+
 
 # ==================== Variable Declaration ====================
 
-# Driver path used for selenium's driver initialization. Download appropriate driver for your browser and put it's path here
-DRIVER_PATH = "C:/Program Files (x86)/chromedriver/chromedriver.exe"
+# Driver path used for selenium's driver initialization. Download appropriate driver for your browser and add it to the config.json file
+DRIVER_PATH = data['path']
 # URL of the Website (game in our case)
 WEBSITE_URL = "https://chromedino.com/"
 # Frame height and width
